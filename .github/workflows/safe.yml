@@ -1,12 +1,12 @@
-name: Vulnerable Pipeline
+name: Safe Pipeline
 
 on:
-  pull_request_target:
+  pull_request:
     types: [opened, edited, synchronize, reopened]
 
 jobs:
-  vulnerable-pipeline:
-    name: Vulnerable Pipeline
+  safe-pipeline:
+    name: Safe Pipeline
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -15,6 +15,6 @@ jobs:
           # For pull_request_target, we need to checkout the base branch
           ref: ${{ github.event.pull_request.base.ref }}
 
-      - name: Vulnerable Injectable Step
+      - name: Safe Step
         run: |
-          echo "Validating PR title: ${{ github.event.pull_request.title }}"
+          echo "Should not run for first-time contributors"
