@@ -1,0 +1,17 @@
+name: Maybe Safe Pipeline
+
+on:
+  pull_request_target:
+    types: [opened, edited, synchronize, reopened]
+
+jobs:
+  maybe-safe-pipeline:
+    name: Maybe Safe Pipeline
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Vulnerable Injectable but guarded? Step
+        run: |
+          echo "Validating PR title: ${{ github.event.pull_request.title }}"
