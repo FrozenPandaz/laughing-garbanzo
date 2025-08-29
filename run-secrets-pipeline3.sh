@@ -4,7 +4,7 @@
 
 #refs to things to exploit
 REPO="FrozenPandaz/laughing-garbanzo"
-WORKFLOW_FILE="super-secret.yml"
+WORKFLOW_FILE="secret.yml"
 
 ## Extract GITHUB_TOKEN
 
